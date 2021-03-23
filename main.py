@@ -56,7 +56,6 @@ def gameLoop():
 
     difficulty = 0
     
-
     foodx = round(random.randint(0+snake_block, dis_width-snake_block))
     foody = round(random.randint(0+snake_block, dis_height-snake_block))
 
@@ -64,9 +63,6 @@ def gameLoop():
         for event in pygame.event.get():
             dis.fill(blue)
             message("Choose difficulty:", white, dis_width/100, 10)
-            #time.sleep(1)
-            #difficulty = 1.5
-            #snake_speed = difficulty * 10
             mouse = pygame.mouse.get_pos()
 
             #button 1
@@ -75,7 +71,6 @@ def gameLoop():
                 dif_text = font_style.render("1", True, red)
                 dis.blit(dif_text, (dis_width/20+15, dis_height/2+10))
 
-                #click
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     difficulty = 1
 
@@ -91,7 +86,6 @@ def gameLoop():
                 dif_text = font_style.render("2", True, red)
                 dis.blit(dif_text, (dis_width/20+90, dis_height/2+10))
 
-                #click
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     difficulty = 2
           
@@ -106,7 +100,6 @@ def gameLoop():
                 dif_text = font_style.render("3", True, red)
                 dis.blit(dif_text, (dis_width/20+165, dis_height/2+10))
 
-                #click
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     difficulty = 3
             
@@ -121,7 +114,6 @@ def gameLoop():
                 dif_text = font_style.render("4", True, red)
                 dis.blit(dif_text, (dis_width/20+240, dis_height/2+10))
 
-                #click
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     difficulty = 4
           
@@ -136,7 +128,6 @@ def gameLoop():
                 dif_text = font_style.render("5", True, red)
                 dis.blit(dif_text, (dis_width/20+315, dis_height/2+10))
 
-                #click
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     difficulty = 5
           
@@ -151,7 +142,6 @@ def gameLoop():
                 dif_text = font_style.render("6", True, red)
                 dis.blit(dif_text, (dis_width/20+390, dis_height/2+10))
 
-                #click
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     difficulty = 6
           
@@ -166,7 +156,6 @@ def gameLoop():
                 dif_text = font_style.render("7", True, red)
                 dis.blit(dif_text, (dis_width/20+465, dis_height/2+10))
 
-                #click
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     difficulty = 7
           
@@ -181,7 +170,6 @@ def gameLoop():
                 dif_text = font_style.render("8", True, red)
                 dis.blit(dif_text, (dis_width/20+540, dis_height/2+10))
 
-                #click
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     difficulty = 8
           
@@ -196,7 +184,6 @@ def gameLoop():
                 dif_text = font_style.render("9", True, red)
                 dis.blit(dif_text, (dis_width/20+615, dis_height/2+10))
 
-                #click
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     difficulty = 9
           
@@ -211,7 +198,6 @@ def gameLoop():
                 dif_text = font_style.render("10", True, red)
                 dis.blit(dif_text, (dis_width/20+680, dis_height/2+10))
 
-                #click
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     difficulty = 10
           
@@ -220,8 +206,6 @@ def gameLoop():
                 dif_text = font_style.render("10", True, white)
                 dis.blit(dif_text, (dis_width/20+680, dis_height/2+10))
 
-
-            #check quit
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
@@ -229,7 +213,7 @@ def gameLoop():
             pygame.display.update()
 
     snake_speed = difficulty * 5
-    snake_direction = " "
+    snake_direction = ""
 
     while not game_over:
         while game_close == True:
@@ -321,9 +305,6 @@ def gameLoop():
         our_snake(snake_block, snake_List)
 
         displayScore(score, white)
-        message(snake_direction, white, dis_width-150, dis_height-50)
-
-        pygame.display.update()
 
         if x1 <= foodx + 13 and x1 >= foodx -13 and y1 <= foody + 13 and y1 >= foody - 13:
             foodx = round(random.randint(0+snake_block, dis_width-snake_block))
@@ -332,11 +313,13 @@ def gameLoop():
             Length_of_snake += 1
             score += difficulty
 
+        pygame.display.update()
         clock.tick(snake_speed)
 
-    message("Looser", red, dis_width/2-200, dis_height/2)
+    dis.fill(blue)
+    message("Looser", red, 10, 10)
     pygame.display.update()
-    time.sleep(2)
+    time.sleep(1.5)
 
     pygame.quit()
     quit()
