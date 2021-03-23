@@ -57,8 +57,8 @@ def gameLoop():
     difficulty = 0
     
 
-    foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
-    foody = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
+    foodx = round(random.randint(0+snake_block, dis_width-snake_block))
+    foody = round(random.randint(0+snake_block, dis_height-snake_block))
 
     while difficulty == 0:
         for event in pygame.event.get():
@@ -86,7 +86,7 @@ def gameLoop():
                 dis.blit(dif_text, (dis_width/20+15, dis_height/2+10))
 
             #button 2
-            if dis_width/20+75 <= mouse[0] <= dis_width/20+125 and dis_height/2+10 <= mouse[1] <= dis_height/2+60: 
+            if dis_width/20+75 <= mouse[0] <= dis_width/20+125 and dis_height/2 <= mouse[1] <= dis_height/2+50: 
                 pygame.draw.rect(dis, grey, [dis_width/20+75, dis_height/2, 50, 50])
                 dif_text = font_style.render("2", True, red)
                 dis.blit(dif_text, (dis_width/20+90, dis_height/2+10))
@@ -101,7 +101,7 @@ def gameLoop():
                 dis.blit(dif_text, (dis_width/20+90, dis_height/2+10))
             
             #button 3
-            if dis_width/20+150 <= mouse[0] <= dis_width/20+200 and dis_height/2+10 <= mouse[1] <= dis_height/2+60: 
+            if dis_width/20+150 <= mouse[0] <= dis_width/20+200 and dis_height/2 <= mouse[1] <= dis_height/2+50: 
                 pygame.draw.rect(dis, grey, [dis_width/20+150, dis_height/2, 50, 50])
                 dif_text = font_style.render("3", True, red)
                 dis.blit(dif_text, (dis_width/20+165, dis_height/2+10))
@@ -116,7 +116,7 @@ def gameLoop():
                 dis.blit(dif_text, (dis_width/20+165, dis_height/2+10))
             
             #button 4
-            if dis_width/20+225 <= mouse[0] <= dis_width/20+275 and dis_height/2+10 <= mouse[1] <= dis_height/2+60: 
+            if dis_width/20+225 <= mouse[0] <= dis_width/20+275 and dis_height/2 <= mouse[1] <= dis_height/2+50: 
                 pygame.draw.rect(dis, grey, [dis_width/20+225, dis_height/2, 50, 50])
                 dif_text = font_style.render("4", True, red)
                 dis.blit(dif_text, (dis_width/20+240, dis_height/2+10))
@@ -131,7 +131,7 @@ def gameLoop():
                 dis.blit(dif_text, (dis_width/20+240, dis_height/2+10))
             
             #button 5
-            if dis_width/20+300 <= mouse[0] <= dis_width/20+350 and dis_height/2+10 <= mouse[1] <= dis_height/2+60: 
+            if dis_width/20+300 <= mouse[0] <= dis_width/20+350 and dis_height/2 <= mouse[1] <= dis_height/2+50: 
                 pygame.draw.rect(dis, grey, [dis_width/20+300, dis_height/2, 50, 50])
                 dif_text = font_style.render("5", True, red)
                 dis.blit(dif_text, (dis_width/20+315, dis_height/2+10))
@@ -146,7 +146,7 @@ def gameLoop():
                 dis.blit(dif_text, (dis_width/20+315, dis_height/2+10))
 
             #button 6
-            if dis_width/20+375 <= mouse[0] <= dis_width/20+425 and dis_height/2+10 <= mouse[1] <= dis_height/2+60: 
+            if dis_width/20+375 <= mouse[0] <= dis_width/20+425 and dis_height/2 <= mouse[1] <= dis_height/2+50: 
                 pygame.draw.rect(dis, grey, [dis_width/20+375, dis_height/2, 50, 50])
                 dif_text = font_style.render("6", True, red)
                 dis.blit(dif_text, (dis_width/20+390, dis_height/2+10))
@@ -161,7 +161,7 @@ def gameLoop():
                 dis.blit(dif_text, (dis_width/20+390, dis_height/2+10))
 
             #button 7
-            if dis_width/20+450 <= mouse[0] <= dis_width/20+500 and dis_height/2+10 <= mouse[1] <= dis_height/2+60: 
+            if dis_width/20+450 <= mouse[0] <= dis_width/20+500 and dis_height/2 <= mouse[1] <= dis_height/2+50: 
                 pygame.draw.rect(dis, grey, [dis_width/20+450, dis_height/2, 50, 50])
                 dif_text = font_style.render("7", True, red)
                 dis.blit(dif_text, (dis_width/20+465, dis_height/2+10))
@@ -176,7 +176,7 @@ def gameLoop():
                 dis.blit(dif_text, (dis_width/20+465, dis_height/2+10))
 
             #button 8
-            if dis_width/20+525 <= mouse[0] <= dis_width/20+575 and dis_height/2+10 <= mouse[1] <= dis_height/2+60: 
+            if dis_width/20+525 <= mouse[0] <= dis_width/20+575 and dis_height/2 <= mouse[1] <= dis_height/2+50: 
                 pygame.draw.rect(dis, grey, [dis_width/20+525, dis_height/2, 50, 50])
                 dif_text = font_style.render("8", True, red)
                 dis.blit(dif_text, (dis_width/20+540, dis_height/2+10))
@@ -191,7 +191,7 @@ def gameLoop():
                 dis.blit(dif_text, (dis_width/20+540, dis_height/2+10))
             
             #button 9
-            if dis_width/20+600 <= mouse[0] <= dis_width/20+650 and dis_height/2+10 <= mouse[1] <= dis_height/2+60: 
+            if dis_width/20+600 <= mouse[0] <= dis_width/20+650 and dis_height/2 <= mouse[1] <= dis_height/2+50: 
                 pygame.draw.rect(dis, grey, [dis_width/20+600, dis_height/2, 50, 50])
                 dif_text = font_style.render("9", True, red)
                 dis.blit(dif_text, (dis_width/20+615, dis_height/2+10))
@@ -206,7 +206,7 @@ def gameLoop():
                 dis.blit(dif_text, (dis_width/20+615, dis_height/2+10))
             
             #button 10
-            if dis_width/20+675 <= mouse[0] <= dis_width/20+725 and dis_height/2+10 <= mouse[1] <= dis_height/2+60: 
+            if dis_width/20+675 <= mouse[0] <= dis_width/20+725 and dis_height/2 <= mouse[1] <= dis_height/2+50: 
                 pygame.draw.rect(dis, grey, [dis_width/20+675, dis_height/2, 50, 50])
                 dif_text = font_style.render("10", True, red)
                 dis.blit(dif_text, (dis_width/20+680, dis_height/2+10))
@@ -325,11 +325,10 @@ def gameLoop():
 
         pygame.display.update()
 
-        
-        #if x1 == foodx and y1 == foody:
         if x1 <= foodx + 13 and x1 >= foodx -13 and y1 <= foody + 13 and y1 >= foody - 13:
-            foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
-            foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
+            foodx = round(random.randint(0+snake_block, dis_width-snake_block))
+            foody = round(random.randint(0+snake_block, dis_height-snake_block))
+
             Length_of_snake += 1
             score += difficulty
 
