@@ -19,7 +19,8 @@ dis_height = 600
 
 snake_block = 15
 
-bg_image = pygame.transform.scale(pygame.image.load('assets/bg.png'), (dis_width, dis_height))
+bg_image = pygame.transform.scale(pygame.image.load('assets/bg.jpg'), (dis_width, dis_height)) #Photo by Luke Chesser on https://unsplash.com/backgrounds/colors/gradient?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+  
 
 clock = pygame.time.Clock()
 
