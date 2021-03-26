@@ -19,6 +19,8 @@ dis_height = 600
 
 snake_block = 15
 
+bg_image = pygame.transform.scale(pygame.image.load('assets/bg.png'), (dis_width, dis_height))
+
 clock = pygame.time.Clock()
 
 font_style = pygame.font.SysFont(None, 50)
@@ -59,9 +61,10 @@ def gameLoop():
     foodx = round(random.randint(0+snake_block, dis_width-snake_block))
     foody = round(random.randint(0+snake_block, dis_height-snake_block))
 
+
     while difficulty == 0:
         for event in pygame.event.get():
-            dis.fill(blue)
+            dis.blit(bg_image, bg_image.get_rect())
             message("Choose difficulty:", white, dis_width/100, 10)
             mouse = pygame.mouse.get_pos()
 
@@ -212,12 +215,13 @@ def gameLoop():
 
             pygame.display.update()
 
+
     snake_speed = difficulty * 5
     snake_direction = ""
 
     while not game_over:
         while game_close == True:
-            dis.fill(white)
+            dis.blit(bg_image, bg_image.get_rect())
             message("Looser! Press Q-Quit or C-Play Again", red, dis_width/100, 10)
             message("End score: "+str(score), red, dis_width/100, 50)
             pygame.display.update()
@@ -285,7 +289,7 @@ def gameLoop():
         x1 += x1_change
         y1 += y1_change
 
-        dis.fill(blue)
+        dis.blit(bg_image, bg_image.get_rect())
 
         pygame.draw.rect(dis, black, [x1, y1, snake_block, snake_block])
         pygame.draw.rect(dis, green, [foodx, foody, snake_block, snake_block])
@@ -316,7 +320,7 @@ def gameLoop():
         pygame.display.update()
         clock.tick(snake_speed)
 
-    dis.fill(blue)
+    dis.blit(bg_image, bg_image.get_rect())
     message("Looser", red, 10, 10)
     pygame.display.update()
     time.sleep(1.5)
